@@ -1,0 +1,22 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
+<!--  unidade de persistencia com o nome financas  -->
+<persistence-unit name="financas">
+<!--  Implementação do JPA, no nosso caso Hibernate  -->
+<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider><!-- hibernate como provider-->
+<!--  Aqui são listadas todas as entidades  -->
+    <class>br.com.caelum.financas.modelo.Conta</class><!-- Pede que coloque todas as entidades na tag class-->
+    <class>br.com.caelum.financas.modelo.Movimentacao</class>
+<properties>
+<!--  Propriedades JDBC  -->
+<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/financas"/>
+<property name="javax.persistence.jdbc.user" value="rafael"/>
+<property name="javax.persistence.jdbc.password" value="Ratim033"/>
+<!--  Configurações específicas do Hibernate  -->
+<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect "/><!-- Tenho que setar a linguagem do DB -->
+<property name="hibernate.hbm2ddl.auto" value="update"/><!-- se ativa permite que o hibernate crie as tabelas e faças os encrementos-->
+<property name="hibernate.show_sql" value="true"/><!-- mostra as query no console-->
+<property name="hibernate.format_sql" value="true"/><!-- formata as query no console-->
+</properties>
+</persistence-unit>
+</persistence>
