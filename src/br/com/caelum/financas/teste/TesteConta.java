@@ -15,8 +15,8 @@ public class TesteConta {
          Conta conta = new Conta();//criação da conta
          conta.setTitular("Rafael");
          conta.setAgencia("123");
-         conta.setBanco("Caixa Economica");
-         conta.setNumero("456");
+         conta.setBanco("Bradesco");
+         conta.setNumero("1234");
 
 
 
